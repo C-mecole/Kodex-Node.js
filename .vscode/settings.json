@@ -1,4 +1,4 @@
 {
-    "editor.fontSize": 18,
-    "explorer.excludeGitIgnore": false
+    "editor.fontSize": 14,
+    "explorer.excludeGitIgnore": true
 }
