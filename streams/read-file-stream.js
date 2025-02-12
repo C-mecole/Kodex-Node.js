@@ -8,7 +8,7 @@ const createFileStream = (filePath, chunkSize = 64) => {
     read: async function () {
       if (!fd) {
         try {
-          fd = await fs.open(filePath, "r");
+          fd = (await fs.open(filePath, "r"));
         } catch (err) {
           this.destroy(err);
           return;
@@ -45,7 +45,7 @@ const createFileStream = (filePath, chunkSize = 64) => {
 };
 
 const filePath = "group.txt";
-const fileStream = createFileStream(filePath, 5);
+const fileStream = createFileStream(filePath, 10);
 
 fileStream.on("data", (chunk) => {
   console.log("Received chunk:", chunk.toString());
