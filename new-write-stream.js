@@ -11,11 +11,12 @@ function LogWriter () {
       console.log (err)
     }
   };
-
-
   return writer;
 }
 
 const W = LogWriter ();
 W.write("that chidimma");
 W.end();
+async function setTimeout() {
+  wait(), 1000
+}
