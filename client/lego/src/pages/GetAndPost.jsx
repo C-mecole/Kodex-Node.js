@@ -4,8 +4,42 @@ import "../styles/GetAndPost.css";
 export default function GetAndPost() {
   const [message, setMessage] = useState("Message will appear here");
 
+<<<<<<< HEAD
   const getServerStatus = () => {
     fetch("http://localhost:4000")
+=======
+  // const getServerStatus = async () => {
+  //   try {
+  //     const res = await fetch("http://localhost:5555");
+  //     const data = await res.json();
+  //     setMessage(data.message);
+  //   } catch (error) {
+  //     setMessage(error.message);
+  //   }
+  // };
+
+  // const getNames = async () => {
+  //   try {
+  //     const res = await fetch("http://localhost:5555/names");
+  //     const data = await res.json();
+  //     setMessage(data.result);
+  //   } catch (error) {
+  //     setMessage(error.message);
+  //   }
+  // };
+
+  const setName = () => {
+    fetch("http://localhost:5555/name", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: "Noah",
+        company: "kodex",
+      }),
+    })
+>>>>>>> c5111455cb349e44e5632e15506a64143e297f3b
       .then((res) => res.json())
       .then((data) => setMessage(data.message))
       .catch((error) => setMessage(error.message));
