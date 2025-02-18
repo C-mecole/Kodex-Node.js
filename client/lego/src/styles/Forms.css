@@ -1,0 +1,56 @@
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  width: 48%;
+  padding: 10px;
+  margin: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:first-of-type {
+  background: #007bff;
+  color: white;
+}
+
+button:last-of-type {
+  background: #28a745;
+  color: white;
+}
+
+pre {
+  background: #eee;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 14px;
+  overflow-x: auto;
+}

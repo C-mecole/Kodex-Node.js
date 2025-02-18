@@ -1,29 +1,21 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const productRoute = require("./routes/productRoute");
 dotenv.config();
 
 const server = express();
 server.use(cors());
 server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT || 4000;
 
-server.get("/", (_req, res) => {
-  res.json({ message: "Server is online" });
-});
+server.use("/product", productRoute);
 
-server.get("/name", (_req, res) => {
-  const names = ["Stellar", "Chidinma", "Covenant"];
-  res.json({ result: names });
-});
-
-server.post("/name", (req, res) => {
-  const data = req.body;
-  //   console.log("Received data: ", data);
-  res
-    .status(200)
-    .json({ message: "Name received successfully", statusCode: 200});
+server.post("/submit", (req, res) => {
+  console.log(req.body);
+  res.json({ message: "Data received", data: req.body });
 });
 
 server.listen(PORT, () => {
