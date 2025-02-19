@@ -1,0 +1,161 @@
+*Stella & Anthony – Banking App*
+
+Features:
+1. Landing Page
+
+    Simple UI with app details
+    Login and register buttons
+
+2. User Authentication
+
+    Register and login (JWT authentication)
+    View and edit user details (name, email, phone, etc.)
+
+3. Dashboard
+
+    Display user balance and basic account info
+    Show recent transactions
+
+4. Withdraw Funds (Mock Only)
+
+    Enter an amount to "withdraw"
+    Deduct from the user’s balance
+
+5. Transfer Funds (Between Users)
+
+    Enter recipient's user ID or email
+    Deduct from sender’s balance and credit the recipient
+
+6. Transaction History
+
+    List all deposits, withdrawals, and transfers
+
+
+*Jacob & Mark – E-Commerce Website*
+
+Features:
+1. Landing Page
+
+    Displays available products
+    Navigation bar with categories
+
+2. Admin Dashboard
+
+    Upload and manage products
+    Edit and delete product details
+
+3. Buyers
+
+    View products
+    Add to cart
+    Checkout & pay
+
+*ChukwuEmeka & Chidinma – Library Management Website*
+
+Features:
+1. User Authentication (JWT)
+
+    Register and login
+    Role-based access: Admin & Member
+
+2. Book Management (CRUD)
+
+    Add, edit, delete, and list books
+    Store book details (title, author, category, availability)
+
+3. Borrow & Return Books
+
+    Members can borrow a book (mark as "borrowed")
+    Return a book (mark as "available")
+
+4. View Borrowed Books
+
+    Members can see their borrowed books
+    Admin can view all borrowed books
+
+5. Search & Filter Books
+
+    Search books by title or author
+    Filter by availability
+
+*David & Chiemerie – Expense Tracker*
+
+Features:
+1. User Authentication (JWT)
+
+    Register and login
+    Secure authentication using JWT
+    View and update profile details
+
+2. Dashboard
+
+    Display total balance
+    Show total income and expenses
+    List recent transactions
+
+3. Add Expenses & Income
+
+    Enter transaction details:
+        Amount
+        Category (Food, Rent, Salary, Shopping, Transport, etc.)
+        Date
+        Description
+    Select Expense or Income
+
+4. Edit & Delete Transactions
+
+    Users can update or remove transactions
+    Changes reflect immediately in the balance
+
+5. Transaction History
+
+    List all past transactions with date, amount, and category
+    Filter transactions by date range or category
+
+6. Budgeting & Spending Limit (Optional)
+
+    Users can set a monthly spending limit
+    Display warnings when approaching or exceeding the limit
+
+7. Search & Filter Transactions
+
+    Search by keyword (e.g., "Groceries")
+    Filter by date, category, or type (income/expense)
+
+8. Responsive Design
+
+    Works on both desktop and mobile
+
+*Covenant – Personal Task Manager*
+
+Features:
+1. User Authentication (JWT)
+
+    Register and login
+    Secure authentication using JWT
+    View and update profile details
+
+2. Task Management (CRUD)
+
+    Add tasks (title, description, due date, priority)
+    Edit tasks (update details if needed)
+    Delete tasks (remove completed or unwanted tasks)
+
+3. Mark Tasks as Completed
+
+    Toggle between "Pending" and "Completed"
+
+4. Task Filtering & Sorting
+
+    Filter tasks by status (Pending/Completed)
+    Sort tasks by due date or priority
+
+5. Responsive UI
+
+    Simple, clean mobile-friendly design
+
+
+Tech Stack:
+
+    Backend: Node.js, Express.js, MongoDB (or PostgreSQL)
+    Frontend: React (basic UI with form handling)

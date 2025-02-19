@@ -25,7 +25,7 @@ server.use(cors());
 // );
 // server.use(morgan("dev", { stream: logStream }));
 
-server.use(logger);
+// server.use(logger);
 server.use(morgan("dev"));
 
 server.use("/api/products", productRoutes);

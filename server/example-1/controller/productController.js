@@ -9,7 +9,7 @@ const products = [
   },
 ];
 
-module.exports.getProducts = (req, res) => {
+module.exports.getProducts = (req, res, next) => {
   res.json({ data: products });
 };
 
