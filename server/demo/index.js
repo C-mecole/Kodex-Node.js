@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 
 const productRoutes = require("./routes/productRoutes");
 const countryRoutes = require("./routes/countryRoutes");
-const logger = require("./middleware/logger");
+// const logger = require("./middleware/logger");
 const errorHandler = require("./middleware/errorHandler");
 
 const server = express();

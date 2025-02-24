@@ -18,10 +18,10 @@ exports.getCountryByCode = (req, res) => {
 
 exports.addCountry = (req, res) => {
   const { code, name, population } = req.body;
-  if (countries.some((c) => c.code === code.toUpperCase())) {
+  if (countries.some((c) => c.code === code)) {
     return res.status(400).json({ message: "Country code already exists" });
   }
-  const newCountry = { code: code.toUpperCase(), name, population };
+  const newCountry = { code: code, name, population };
   countries.push(newCountry);
   res.status(201).json(newCountry);
 };
