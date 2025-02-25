@@ -5,26 +5,40 @@ const productRoute = require("./routes/productRoute");
 // const logger = require("./middleware/logger");
 const countMiddleWare = require("./middleware/count");
 const Joi = require("joi");
+const path = require("path");
+const errorHandler = require("./middleware/error");
+// const helmet = require("helmet");
 
 dotenv.config();
 
 const server = express();
 let count = 0;
-server.use(countMiddleWare(count));
+// server.use(countMiddleWare(count));
 server.use(cors());
+// server.use(helmet())
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT || 4000;
 
 // server.use(logger);
+const public = path.join(__dirname, "/public");
+server.use(express.static(public));
 server.use("/product", productRoute);
+
+server.get("/static-file", (_req, res) => {
+  const file = "public/pages/failed.html";
+  res.sendFile(file);
+});
 
 server.post("/submit", (req, res) => {
   const nameSchema = Joi.object({
     name: Joi.string().min(6).max(10).required(),
     password: Joi.string()
-      .pattern(new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$"), "strong password")
+      .pattern(
+        new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*d)(?=.*[W_]).{8,}$"),
+        "strong password"
+      )
       .required(),
   });
 
@@ -63,6 +77,20 @@ server.get("/home", (_req, res) => {
 server.get("/stat", (_req, res) => {
   res.json({ count: count });
 });
+
+server.all("*", (req, res) => {
+  res
+    .status(404)
+    .json({ statusCode: 404, error: { message: `${req.originalUrl} is invalid` } });
+});
+
+server.use((req, res, next) => {
+  if (!req.route) {
+    next(new Error("Server don blow"));
+  }
+});
+
+// server.use(errorHandler);
 
 server.listen(PORT, () => {
   console.log("Server is active now");
