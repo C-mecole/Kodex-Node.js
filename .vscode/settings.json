@@ -1,4 +1,16 @@
 {
-  "editor.fontSize": 24,
-  "explorer.excludeGitIgnore": true
+  "editor.fontSize": 14,
+  "explorer.excludeGitIgnore": true,
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "Noah",
+      "group": "Noah",
+      "database": "postgres",
+      "username": "postgres"
+    }
+  ]
 }
