@@ -12,5 +12,6 @@
       "database": "postgres",
       "username": "postgres"
     }
-  ]
+  ],
+  "cSpell.words": ["PGDATABASE", "PGHOST", "PGPASSWORD", "PGPORT", "PGUSER"]
 }
