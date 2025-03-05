@@ -13,5 +13,12 @@
       "username": "postgres"
     }
   ],
-  "cSpell.words": ["PGDATABASE", "PGHOST", "PGPASSWORD", "PGPORT", "PGUSER"]
+  "cSpell.words": [
+    "PGDATABASE",
+    "PGHOST",
+    "PGPASSWORD",
+    "PGPORT",
+    "PGUSER",
+    "UUIDV"
+  ]
 }

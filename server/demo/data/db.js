@@ -1,5 +1,5 @@
 const { Pool } = require("pg");
-const env = require("../config/env.js");
+const env = require("../config/env");
 
 const pool = new Pool({
   ssl: env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false,
@@ -27,4 +27,5 @@ pool.on("error", (err, _client) => {
   console.error("Unexpected error on idle client", err);
   //   process.exit(-1);
 });
+
 module.exports = pool;

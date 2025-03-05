@@ -19,7 +19,8 @@ const createUser = async (name, email) => {
 };
 
 const deleteUser = async (id) => {
-  await pool.query("DELETE FROM users WHERE id = $1", [id]);
+  const { rows } = await pool.query("DELETE FROM users WHERE id = $1 RETURNING *", [id]);
+  console.log(rows);
   return { message: "User deleted successfully" };
 };
 
