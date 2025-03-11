@@ -9,6 +9,12 @@ const pool = new Pool({
   user: env.PG.user,
   password: env.PG.password,
   database: env.PG.database,
+  pool: {
+    max: 10,
+    min: 0,
+    acquire: 30000,
+    idle: 10000,
+  },
 });
 
 pool.on("connect", (_client) => {
