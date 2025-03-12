@@ -22,4 +22,10 @@ const deleteProduct = async (id) => {
   return await Product.destroy({ where: { id } });
 };
 
-module.exports = { getAllProducts, getProductById, createProduct, updateProduct, deleteProduct };
+module.exports = {
+  getAllProducts,
+  getProductById,
+  createProduct,
+  updateProduct,
+  deleteProduct,
+};
