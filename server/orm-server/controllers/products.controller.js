@@ -1,11 +1,22 @@
 const productService = require("../services/product.services");
+const jwt = require("jsonwebtoken");
+const env = require("../config/env");
 
-exports.getProducts = async (_req, res) => {
+exports.getProducts = async (req, res) => {
+  const token = req.headers["authorization"].split(" ")[1];
+
   try {
-    const products = await productService.getAllProducts();
-    res.json(products);
+    const decodedData = jwt.verify(token, env.JWT_SECRET);
+    if (decodedData) {
+      try {
+        const products = await productService.getAllProducts();
+        res.json(products);
+      } catch (error) {
+        res.status(500).json({ message: "Error fetching products", error });
+      }
+    }
   } catch (error) {
-    res.status(500).json({ message: "Error fetching products", error });
+    res.status(403).json({ message: "Invalid token" });
   }
 };
 

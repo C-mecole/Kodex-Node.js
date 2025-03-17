@@ -7,7 +7,9 @@ const error = require("./middleware/error");
 const errorHandler = require("./middleware/errorHandler");
 const { User } = require("./models");
 const bcrypt = require("bcrypt");
-const { message } = require("./schema/product.schema");
+// const { message } = require("./schema/product.schema");
+const jwt = require("jsonwebtoken");
+const { JWT_SECRET } = require("./config/env");
 
 const app = express();
 
@@ -72,13 +74,18 @@ app.post("/user/login", async (req, res) => {
       },
     });
   } else {
-    const { password: hashedPassword } = user.dataValues;
-
+    const { password: hashedPassword, username, email } = user.dataValues;
     const isValid = await bcrypt.compare(password, hashedPassword);
 
+    const token = jwt.sign({ username, email }, JWT_SECRET, {
+      expiresIn: "1h",
+    });
+
+    console.log(token)
     if (isValid) {
       res.status(200).json({
         message: "Successful login",
+        token,
       });
     } else {
       res.status(401).json({
